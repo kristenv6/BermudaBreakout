@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Teleport : MonoBehaviour
+public class TeleportToForest : MonoBehaviour
 {
-    public bool triggered;
-
     // Start is called before the first frame update
     void Start()
     {
-        triggered = false;
+        
     }
 
     // Update is called once per frame
@@ -21,7 +19,6 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        triggered = true;
-        SceneManager.LoadScene("IslandScene");
+        SceneManager.LoadScene("ForestScene");
     }
 }
