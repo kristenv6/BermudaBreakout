@@ -15,8 +15,10 @@ public class FinalScene : MonoBehaviour
     public GameObject paddle1;
     public GameObject paddle2;
     public GameObject boat;
+
     public GameObject gameOverText;
     public GameObject playAgainButton;
+    public GameObject mainMenuButton;
     public GameObject quitButton;
     public GameObject panel;
     public float time = 5.0f;
@@ -45,10 +47,14 @@ public class FinalScene : MonoBehaviour
         congratsText = GameObject.Find("Congrats");
         gameOverText = GameObject.Find("Game Over");
         gameOverText.SetActive(false);
+
         playAgainButton = GameObject.Find("Play Again");
         playAgainButton.SetActive(false);
+        mainMenuButton = GameObject.Find("MainMenu");
+        mainMenuButton.SetActive(false);
         quitButton = GameObject.Find("Quit");
         quitButton.SetActive(false);
+
         panel = GameObject.Find("Panel");
         panel.SetActive(false);
 
@@ -90,6 +96,7 @@ public class FinalScene : MonoBehaviour
         panel.SetActive(true);
         gameOverText.SetActive(true);
         playAgainButton.SetActive(true);
+        mainMenuButton.SetActive(true);
         quitButton.SetActive(true);
         // SceneManager.LoadScene("GameOver");
      }

@@ -57,42 +57,48 @@ public class StartStory : MonoBehaviour
 
          private IEnumerator ActivationRoutine()
      {        
+        // "it all started"
          StartCoroutine(FadeTextToFullAlpha(1f, textOne.GetComponent<Text>()));
-         //Wait for 14 secs.
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3.5f);
         StartCoroutine(FadeTextToZeroAlpha(1f, textOne.GetComponent<Text>()));
         yield return new WaitForSeconds(1);
+        // nasty storm
         StartCoroutine(FadeTextToFullAlpha(1f, textTwo));
         image.sprite = secondImage;
         yield return new WaitForSeconds(3);
         StartCoroutine(FadeTextToZeroAlpha(1f, textTwo));
         yield return new WaitForSeconds(1);
+        // you awoke
          StartCoroutine(FadeTextToFullAlpha(1f, textThree));
          image.sprite = thirdImage;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
         StartCoroutine(FadeTextToZeroAlpha(1f, textThree));
         yield return new WaitForSeconds(1);
+        // must now rebuild boat
         StartCoroutine(FadeTextToFullAlpha(1f, textFour));
         yield return new WaitForSeconds(3);
         StartCoroutine(FadeTextToZeroAlpha(1f, textFour));
         yield return new WaitForSeconds(1);
+        // maintain health
         StartCoroutine(FadeTextToFullAlpha(1f, textFive));
         image.sprite = fourthImage;
         yield return new WaitForSeconds(3);
         StartCoroutine(FadeTextToZeroAlpha(1f, textFive));
         yield return new WaitForSeconds(1);
+        // portal
         StartCoroutine(FadeTextToFullAlpha(1f, textSix));
         image.sprite = portal;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3.5f);
         StartCoroutine(FadeTextToZeroAlpha(1f, textSix));
         yield return new WaitForSeconds(1);
         imageObject.SetActive(false);
         StartCoroutine(FadeTextToFullAlpha(1f, instructions));
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         StartCoroutine(FadeTextToZeroAlpha(1f, instructions));
         yield return new WaitForSeconds(1);
         StartCoroutine(FadeTextToFullAlpha(1f, goodLuck));
         yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("IslandScene");
 
 
 
