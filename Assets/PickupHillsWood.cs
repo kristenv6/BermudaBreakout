@@ -7,9 +7,9 @@ public class PickupHillsWood : MonoBehaviour
     GameObject wood1;
     GameObject wood2;
     GameObject woodParent;
-    GameObject woodCountDisplay;
     GameObject pickupInstructionsText;
     GameObject instructionsBackground;
+    GameObject audioWoodPickup;
     public bool inRange;
 
     // Start is called before the first frame update
@@ -18,9 +18,9 @@ public class PickupHillsWood : MonoBehaviour
         wood1 = GameObject.Find("Wood1");
         wood2 = GameObject.Find("Wood2");
         woodParent = GameObject.Find("WoodParent");
-        woodCountDisplay = GameObject.Find("WoodCount");
         pickupInstructionsText = GameObject.Find("WoodPickupInstructions");
         instructionsBackground = GameObject.Find("InstructionsBackground");
+        audioWoodPickup = GameObject.Find("AudioWoodPickup");
 
         pickupInstructionsText.SetActive(false);
         instructionsBackground.SetActive(false);
@@ -39,9 +39,6 @@ public class PickupHillsWood : MonoBehaviour
         {
             UserPicksUp();
         }
-
-        woodCountDisplay.GetComponent<UnityEngine.UI.Text>().text =
-            "Boat Pieces Collected: " + GameStats.WoodCount;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -60,12 +57,14 @@ public class PickupHillsWood : MonoBehaviour
 
     private void UserPicksUp()
     {
-        GameStats.WoodCount = GameStats.WoodCount + 1;
         wood1.SetActive(false);
         wood2.SetActive(false);
         pickupInstructionsText.SetActive(false);
         instructionsBackground.SetActive(false);
         GameStats.HillsWoodPickedUp = true;
+        GameStats.WoodCount += 1;
         woodParent.SetActive(false);
+
+        audioWoodPickup.GetComponent<AudioSource>().Play();
     }
 }
