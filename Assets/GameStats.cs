@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public static class GameStats
 {
@@ -23,6 +24,9 @@ public static class GameStats
     private static bool caveWoodPickedUp = false;
     private static bool forestWoodPickedUp = false;
     private static bool hillsWoodPickedUp = false;
+
+    //scene
+    private static string currSceneName = "";
 
     // timer function
     public static float GameTimer
@@ -168,6 +172,18 @@ public static class GameStats
         set
         {
             hillsWoodPickedUp = value;
+        }
+    }
+
+    public static string CurrSceneName
+    {
+        get
+        {
+            return currSceneName;
+        }
+        set
+        {
+            currSceneName = value;
         }
     }
 

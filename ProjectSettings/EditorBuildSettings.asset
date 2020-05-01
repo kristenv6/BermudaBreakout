@@ -4,10 +4,29 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: [{enabled: 1, path: Assets/Scenes/IslandScene.unity, guid: 9f121ffa6c8d9481792774f629855610},
-    {enabled: 1, path: Assets/Scenes/CaveScene.unity, guid: 10854b6021cb641e9ad925bc7c9f155b},
-    {enabled: 1, path: Assets/Scenes/HillsScene.unity, guid: 25af7f06d7513402e88cda86ed70872d},
-    {enabled: 1, path: Assets/Scenes/ForestScene.unity, guid: 41b59121e1d6947b08fea6c8f553cedf},
-    {enabled: 1, path: Assets/Scenes/BuildBoat.unity, guid: e39ecf5e3b91a4e48860f1daffff4afe},
-    {enabled: 1, path: Assets/Scenes/GameOver.unity, guid: d6071c394732d44ceb84ad975ebc4551}]
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/IslandScene.unity
+    guid: 9f121ffa6c8d9481792774f629855610
+  - enabled: 1
+    path: Assets/Scenes/CaveScene.unity
+    guid: 10854b6021cb641e9ad925bc7c9f155b
+  - enabled: 1
+    path: Assets/Scenes/HillsScene.unity
+    guid: 25af7f06d7513402e88cda86ed70872d
+  - enabled: 1
+    path: Assets/Scenes/ForestScene.unity
+    guid: 41b59121e1d6947b08fea6c8f553cedf
+  - enabled: 1
+    path: Assets/Scenes/BuildBoat.unity
+    guid: e39ecf5e3b91a4e48860f1daffff4afe
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: d31e049223ccc46398bfcc97322bad65
+  - enabled: 1
+    path: Assets/Scenes/StartStoryScene.unity
+    guid: 1e49562f5af0749d3836ee4e47b0def3
   m_configObjects: {}
