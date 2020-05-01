@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4842,12 +4842,14 @@ MonoBehaviour:
   islandStartPosition: {x: 5, y: 8, z: -2.5}
   islandFromCavePosition: {x: 38, y: 5, z: -29}
   islandFromHillsPosition: {x: 5, y: 8, z: -2.5}
-  caveFromIslandPosition: {x: 5, y: 8, z: -2.5}
   caveFromForestPosition: {x: 5, y: 8, z: -2.5}
+  caveFromIslandPosition: {x: 5, y: 8, z: -2.5}
   forestFromCavePosition: {x: 5, y: 8, z: -2.5}
   forestFromHillsPosition: {x: 5, y: 8, z: -2.5}
   hillsFromIslandPosition: {x: 5, y: 8, z: -2.5}
   hillsFromForestPosition: {x: 5, y: 8, z: -2.5}
+  activeSceneName: 
+  oldSceneName: 
 --- !u!1001 &1534082213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5581,7 +5583,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1725010582}
-  - component: {fileID: 1725010581}
   m_Layer: 0
   m_Name: Sounds
   m_TagString: Untagged
@@ -5589,18 +5590,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1725010581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725010580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192f27c3d8f6749559feae9f3857de41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1725010582
 Transform:
   m_ObjectHideFlags: 0
