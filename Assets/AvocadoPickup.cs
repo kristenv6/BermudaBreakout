@@ -11,6 +11,8 @@ public class AvocadoPickup : MonoBehaviour
     Image instructionsBackground;
     public bool inRange;
     
+    GameObject foodSound;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class AvocadoPickup : MonoBehaviour
       healthSystem = GameObject.Find("HealthSystem");
       pickupInstructionsText = GameObject.Find("FoodPickUpDir").GetComponent<Text>();
       instructionsBackground = GameObject.Find("InstructionsBackground_Food").GetComponent<Image>();
+      foodSound = GameObject.Find("AudioFoodPickup");
       
       pickupInstructionsText.enabled = false;
       instructionsBackground.enabled = false;
@@ -27,7 +30,7 @@ public class AvocadoPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (inRange && Input.GetKeyDown("a"))
+      if (inRange && Input.GetKeyDown("space"))
       {
           UserPicksUp();
       }
@@ -35,16 +38,20 @@ public class AvocadoPickup : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+      if(foodItem.activeSelf) {
         inRange = true;
         pickupInstructionsText.enabled = true;
         instructionsBackground.enabled = true;
+      }
     }
 
     private void OnTriggerExit(Collider other)
     {
+      if(foodItem.activeSelf) {
         inRange = false;
         pickupInstructionsText.enabled = false;
         instructionsBackground.enabled = false;
+      }
     }
 
     private void UserPicksUp()
@@ -52,6 +59,7 @@ public class AvocadoPickup : MonoBehaviour
         foodItem.SetActive(false);
         pickupInstructionsText.enabled = false;
         instructionsBackground.enabled = false;
+        foodSound.GetComponent<AudioSource>().Play();
         
         // do the health stuff 
         int heartToShow = GameStats.heartNum;

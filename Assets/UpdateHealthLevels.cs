@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class UpdateHealthLevels : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class UpdateHealthLevels : MonoBehaviour
 
       var ts = TimeSpan.FromSeconds(GameStats.healthTimer);
 
-      if (ts.Seconds == GameStats.nextLife) {
+      if (ts.Seconds == GameStats.lifeGapTime) {
         GameObject heart = GameObject.Find("Heart" + GameStats.heartNum.ToString());
         if (heart) {
           GameStats.heartNum++;
@@ -43,8 +44,9 @@ public class UpdateHealthLevels : MonoBehaviour
           updateHealthAudio.GetComponent<AudioSource>().Play();
           if (GameStats.heartNum == 5) {
             gameOver.SetActive(true);
+            GameObject.Find("FPSController").GetComponent<FirstPersonController>().enabled = false;
           }
-          GameStats.nextLife += GameStats.lifeGapTime;
+          GameStats.healthTimer = 0;
         }
       }
   }

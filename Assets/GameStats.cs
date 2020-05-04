@@ -12,10 +12,11 @@ public static class GameStats
     // health levels
     public static float healthTimer = 0;
     public static int heartNum = 0;
-    public static int orig_lifeGapTime = 15;
-    public static int orig_nextLife = 15;
-    public static int lifeGapTime = 15;
-    public static int nextLife = 15;
+    public static int orig_lifeGapTime = 59;
+    public static int orig_nextLife = 59;
+    public static int lifeGapTime = 3;
+    public static int nextLife = 59;
+    public static int nextLifeMin = 0;
     
     // wood pickup vars 
     private static int woodCount = 0;
