@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class UpdateHealthLevels : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class UpdateHealthLevels : MonoBehaviour
           updateHealthAudio.GetComponent<AudioSource>().Play();
           if (GameStats.heartNum == 5) {
             gameOver.SetActive(true);
+            GameObject.Find("FPSController").GetComponent<FirstPersonController>().enabled = false;
           }
           GameStats.healthTimer = 0;
         }

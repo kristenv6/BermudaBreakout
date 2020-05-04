@@ -14,9 +14,10 @@ public static class GameStats
     public static int heartNum = 0;
     public static int orig_lifeGapTime = 59;
     public static int orig_nextLife = 59;
-    public static int lifeGapTime = 59;
+    public static int lifeGapTime = 3;
     public static int nextLife = 59;
     public static int nextLifeMin = 0;
+    
     // wood pickup vars 
     private static int woodCount = 0;
 
