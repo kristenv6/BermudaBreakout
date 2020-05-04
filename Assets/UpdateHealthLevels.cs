@@ -34,7 +34,7 @@ public class UpdateHealthLevels : MonoBehaviour
 
       var ts = TimeSpan.FromSeconds(GameStats.healthTimer);
 
-      if (ts.Seconds == GameStats.nextLife) {
+      if (ts.Seconds == GameStats.lifeGapTime) {
         GameObject heart = GameObject.Find("Heart" + GameStats.heartNum.ToString());
         if (heart) {
           GameStats.heartNum++;
@@ -44,7 +44,7 @@ public class UpdateHealthLevels : MonoBehaviour
           if (GameStats.heartNum == 5) {
             gameOver.SetActive(true);
           }
-          GameStats.nextLife += GameStats.lifeGapTime;
+          GameStats.healthTimer = 0;
         }
       }
   }
