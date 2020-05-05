@@ -26,6 +26,8 @@ public class PickupCaveWood : MonoBehaviour
         instructionsBackground.SetActive(false);
         inRange = false;
 
+        SetWoodPosition();
+
         if (GameStats.CaveWoodPickedUp)
         {
             woodParent.SetActive(false);
@@ -35,10 +37,41 @@ public class PickupCaveWood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange && Input.GetKeyDown("a"))
+        if (inRange && Input.GetKeyDown(KeyCode.Space))
         {
             UserPicksUp();
         }
+    }
+
+    private void SetWoodPosition()
+    {
+        if (GameStats.caveWoodPosition != new Vector3(0, 0, 0))
+        {
+            woodParent.transform.position = GameStats.caveWoodPosition;
+            return;
+        }
+
+        float randValue = Random.value * 4;
+        Vector3 pos;
+        if (randValue <= 1)
+        {
+            pos = new Vector3(-40.74f, -4.9f, -56.46f);
+        }
+        else if (randValue <= 2)
+        {
+            pos = new Vector3(-57.41f, -4.54f, -70.71f);
+        }
+        else if (randValue <= 2)
+        {
+            pos = new Vector3(-75.2f, -4.68f, -53.94f);
+        }
+        else
+        {
+            pos = new Vector3(3.2f, -4.91f, -7.6f);
+        }
+
+        GameStats.caveWoodPosition = pos;
+        woodParent.transform.position = pos;
     }
 
     private void OnTriggerEnter(Collider other)

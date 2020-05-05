@@ -9,7 +9,6 @@ public class KeepGameTime : MonoBehaviour
 {
     public Text timerText;
     
-    float screenWidth;
     float screenHeight;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,7 @@ public class KeepGameTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xPos = screenWidth - 1300;
+        float xPos = 250;
         float yPos = screenHeight - 150;
         float zPos = this.transform.position.z;
         timerText.transform.position = new Vector3(xPos, yPos, zPos);
@@ -35,7 +34,6 @@ public class KeepGameTime : MonoBehaviour
     
     private void OnGUI()
     {
-        screenWidth = Screen.width;
         screenHeight = Screen.height;
     }
 }
