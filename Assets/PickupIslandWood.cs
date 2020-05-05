@@ -26,6 +26,8 @@ public class PickupIslandWood : MonoBehaviour
         instructionsBackground.SetActive(false);
         inRange = false;
 
+        SetWoodPosition();
+
         if(GameStats.IslandWoodPickedUp)
         {
             woodParent.SetActive(false);
@@ -35,10 +37,41 @@ public class PickupIslandWood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange && Input.GetKeyDown("a"))
+        if (inRange && Input.GetKeyDown(KeyCode.Space))
         {
             UserPicksUp();
         }
+    }
+
+    private void SetWoodPosition()
+    {
+        if (GameStats.islandWoodPosition != new Vector3(0, 0, 0))
+        {
+            woodParent.transform.position = GameStats.islandWoodPosition;
+            return;
+        }
+
+        float randValue = Random.value * 4;
+        Vector3 pos;
+        if (randValue <= 1)
+        {
+            pos = new Vector3(28.12f, 1.37f, -36.17f);
+        }
+        else if (randValue <= 2)
+        {
+            pos = new Vector3(-40.35f, 0.42f, -38.83f);
+        }
+        else if (randValue <= 2)
+        {
+            pos = new Vector3(43.81f, 0.69f, 37.31f);
+        }
+        else
+        {
+            pos = new Vector3(-15.8f, 1.04f, 37.13f);
+        }
+
+        GameStats.islandWoodPosition = pos;
+        woodParent.transform.position = pos;
     }
 
     private void OnTriggerEnter(Collider other)

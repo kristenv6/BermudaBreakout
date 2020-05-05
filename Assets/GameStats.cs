@@ -14,7 +14,7 @@ public static class GameStats
     public static int heartNum = 0;
     public static int orig_lifeGapTime = 59;
     public static int orig_nextLife = 59;
-    public static int lifeGapTime = 3;
+    public static int lifeGapTime = 60;
     public static int nextLife = 59;
     public static int nextLifeMin = 0;
     
@@ -25,6 +25,11 @@ public static class GameStats
     private static bool caveWoodPickedUp = false;
     private static bool forestWoodPickedUp = false;
     private static bool hillsWoodPickedUp = false;
+
+    public static Vector3 islandWoodPosition = new Vector3(0, 0, 0);
+    public static Vector3 caveWoodPosition = new Vector3(0, 0, 0);
+    public static Vector3 forestWoodPosition = new Vector3(0, 0, 0);
+    public static Vector3 hillsWoodPosition = new Vector3(0, 0, 0);
 
     //scene
     private static string currSceneName = "";

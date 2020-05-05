@@ -27,6 +27,8 @@ public class PickupForestWood : MonoBehaviour
         instructionsBackground.SetActive(false);
         inRange = false;
 
+        SetWoodPosition();
+
         if (GameStats.ForestWoodPickedUp)
         {
             woodParent.SetActive(false);
@@ -36,10 +38,41 @@ public class PickupForestWood : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inRange && Input.GetKeyDown("a"))
+        if (inRange && Input.GetKeyDown(KeyCode.Space))
         {
             UserPicksUp();
         }
+    }
+
+    private void SetWoodPosition()
+    {
+        if (GameStats.forestWoodPosition != new Vector3(0, 0, 0))
+        {
+            woodParent.transform.position = GameStats.forestWoodPosition;
+            return;
+        }
+
+        float randValue = Random.value * 4;
+        Vector3 pos;
+        if (randValue <= 1)
+        {
+            pos = new Vector3(44.33f, 1.59f, 43.29f);
+        }
+        else if (randValue <= 2)
+        {
+            pos = new Vector3(23.57f, 0.87f, 47.07f);
+        }
+        else if (randValue <= 2)
+        {
+            pos = new Vector3(29.17f, 0.1f, 15.27f);
+        }
+        else
+        {
+            pos = new Vector3(43.81f, 1.62f, 42.96f);
+        }
+
+        GameStats.forestWoodPosition = pos;
+        woodParent.transform.position = pos;
     }
 
     private void OnTriggerEnter(Collider other)

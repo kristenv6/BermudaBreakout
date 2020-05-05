@@ -576,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275189017}
   m_LocalRotation: {x: -0, y: -0.89068246, z: -0, w: 0.4546261}
-  m_LocalPosition: {x: -53.93, y: -4.9, z: -48.42}
+  m_LocalPosition: {x: 3.2, y: -4.91, z: -7.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 212459227}
@@ -2432,7 +2432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "A" to Pick Up Wood
+  m_Text: Press "Space" to Pick Up Wood
 --- !u!222 &967569713
 CanvasRenderer:
   m_ObjectHideFlags: 0
