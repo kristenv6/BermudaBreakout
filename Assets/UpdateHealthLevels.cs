@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 public class UpdateHealthLevels : MonoBehaviour
 {
@@ -19,10 +20,7 @@ public class UpdateHealthLevels : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    gameOver = GameObject.Find("TempGameOver");
-    gameOver.SetActive(false);
-    
-    updateHealthAudio = GameObject.Find("AudioHeartLoss");
+        updateHealthAudio = GameObject.Find("AudioHeartLoss");
   }
   
   // Update is called once per frame
@@ -43,8 +41,7 @@ public class UpdateHealthLevels : MonoBehaviour
           heart.SetActive(false);
           updateHealthAudio.GetComponent<AudioSource>().Play();
           if (GameStats.heartNum == 5) {
-            gameOver.SetActive(true);
-            GameObject.Find("FPSController").GetComponent<FirstPersonController>().enabled = false;
+            SceneManager.LoadScene("GameOver");
           }
           GameStats.healthTimer = 0;
         }
