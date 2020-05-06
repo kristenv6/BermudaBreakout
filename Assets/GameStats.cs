@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public static class GameStats
 {
@@ -11,10 +12,11 @@ public static class GameStats
     // health levels
     public static float healthTimer = 0;
     public static int heartNum = 0;
-    public static int orig_lifeGapTime = 60;
-    public static int orig_nextLife = 60;
+    public static int orig_lifeGapTime = 59;
+    public static int orig_nextLife = 59;
     public static int lifeGapTime = 60;
-    public static int nextLife = 60;
+    public static int nextLife = 59;
+    public static int nextLifeMin = 0;
     
     // wood pickup vars 
     private static int woodCount = 0;
@@ -23,6 +25,14 @@ public static class GameStats
     private static bool caveWoodPickedUp = false;
     private static bool forestWoodPickedUp = false;
     private static bool hillsWoodPickedUp = false;
+
+    public static Vector3 islandWoodPosition = new Vector3(0, 0, 0);
+    public static Vector3 caveWoodPosition = new Vector3(0, 0, 0);
+    public static Vector3 forestWoodPosition = new Vector3(0, 0, 0);
+    public static Vector3 hillsWoodPosition = new Vector3(0, 0, 0);
+
+    //scene
+    private static string currSceneName = "";
 
     // timer function
     public static float GameTimer
@@ -168,6 +178,18 @@ public static class GameStats
         set
         {
             hillsWoodPickedUp = value;
+        }
+    }
+
+    public static string CurrSceneName
+    {
+        get
+        {
+            return currSceneName;
+        }
+        set
+        {
+            currSceneName = value;
         }
     }
 
