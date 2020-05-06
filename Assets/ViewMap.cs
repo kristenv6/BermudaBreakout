@@ -31,6 +31,11 @@ public class ViewMap : MonoBehaviour
     float scaleCaveX = 155f/180;
     float scaleCaveY = 150f/180;
 
+    float transformForestX = -50;
+    float transformForestY = -50;
+    float scaleForestX = 155f/90;
+    float scaleForestY = -150f/90;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,7 +81,6 @@ public class ViewMap : MonoBehaviour
         }
         else if (sceneName == "CaveScene") 
         {
-            //navigationDot.transform.localPosition = new Vector3(40, 42, 1);
             float transformedX = userPosition.x + transformCaveX;
             float transformedY = userPosition.z + transformCaveY;
             float newX = RotateX(transformedX, transformedY, 90) * scaleCaveX;
@@ -85,7 +89,6 @@ public class ViewMap : MonoBehaviour
         } 
         else if (sceneName == "HillsScene") 
         {
-            //navigationDot.transform.localPosition = new Vector3(-40, -42, 1);
             float transformedX = userPosition.x + transformHillsX;
             float transformedY = userPosition.z + transformHillsY;
             float newX = RotateX(transformedX, transformedY, 180) * scaleHillsX;
@@ -94,7 +97,11 @@ public class ViewMap : MonoBehaviour
         } 
         else if (sceneName == "ForestScene") 
         {
-            navigationDot.transform.localPosition = new Vector3(40, -42, 1);
+            float transformedX = userPosition.x + transformForestX;
+            float transformedY = userPosition.z + transformForestY;
+            float newX = RotateX(transformedX, transformedY, 180) * scaleForestX;
+            float newY = RotateY(transformedX, transformedY, 180) * scaleForestY;
+            navigationDot.transform.localPosition = new Vector3(newX, newY, 1);
         }
     }
 
