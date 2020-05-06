@@ -20,6 +20,7 @@ public class StartStory : MonoBehaviour
    public Sprite thirdImage;
    public Sprite fourthImage;
    public Sprite portal;
+   public AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
@@ -46,13 +47,8 @@ public class StartStory : MonoBehaviour
         imageObject  =GameObject.Find("Image");
         image = imageObject.GetComponent<Image>();
 
+        audio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
         StartCoroutine(ActivationRoutine());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
          private IEnumerator ActivationRoutine()
@@ -69,14 +65,14 @@ public class StartStory : MonoBehaviour
         StartCoroutine(FadeTextToZeroAlpha(1f, textTwo));
         yield return new WaitForSeconds(1);
         // you awoke
-         StartCoroutine(FadeTextToFullAlpha(1f, textThree));
-         image.sprite = thirdImage;
-        yield return new WaitForSeconds(4);
+        StartCoroutine(FadeTextToFullAlpha(1f, textThree));
+        image.sprite = thirdImage;
+        yield return new WaitForSeconds(4.5f);
         StartCoroutine(FadeTextToZeroAlpha(1f, textThree));
         yield return new WaitForSeconds(1);
         // must now rebuild boat
         StartCoroutine(FadeTextToFullAlpha(1f, textFour));
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3.5f);
         StartCoroutine(FadeTextToZeroAlpha(1f, textFour));
         yield return new WaitForSeconds(1);
         // maintain health
@@ -88,16 +84,17 @@ public class StartStory : MonoBehaviour
         // portal
         StartCoroutine(FadeTextToFullAlpha(1f, textSix));
         image.sprite = portal;
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         StartCoroutine(FadeTextToZeroAlpha(1f, textSix));
         yield return new WaitForSeconds(1);
         imageObject.SetActive(false);
         StartCoroutine(FadeTextToFullAlpha(1f, instructions));
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(11);
         StartCoroutine(FadeTextToZeroAlpha(1f, instructions));
         yield return new WaitForSeconds(1);
         StartCoroutine(FadeTextToFullAlpha(1f, goodLuck));
         yield return new WaitForSeconds(3);
+        StartCoroutine(FadeOut(audio, 0.2f));
         SceneManager.LoadScene("IslandScene");
 
 
@@ -121,5 +118,17 @@ public class StartStory : MonoBehaviour
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
             yield return null;
         }
+    }
+        public static IEnumerator FadeOut (AudioSource audioSource, float FadeTime) {
+        float startVolume = audioSource.volume;
+ 
+        while (audioSource.volume > 0) {
+            audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+ 
+            yield return null;
+        }
+ 
+        audioSource.Stop ();
+       audioSource.volume = startVolume;
     }
 }

@@ -418,7 +418,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "YOU CAN PORTAL TO OTHER PARTS OF THE ISLAND \n\t- BEACH\n\t- FORREST\n\t-
-    CAVE\n\t- OR JUNGLE\nBY APPROACHING A PURPLE PORTAL "
+    CAVE\n\t- JUNGLE\nBY APPROACHING A PURPLE PORTAL "
 --- !u!222 &866628526
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -706,6 +706,7 @@ MonoBehaviour:
   thirdImage: {fileID: 21300000, guid: d3d1321146eb245eeb28eef1bcf0f501, type: 3}
   fourthImage: {fileID: 21300000, guid: 9d65aa58baf7d4291b9a4c2adf3a3d05, type: 3}
   portal: {fileID: 21300000, guid: 8eb2388202dd34d97b6c09cc73763d61, type: 3}
+  audio: {fileID: 0}
 --- !u!1 &1428750351
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,9 +833,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d8f7a78a964aa489aafb3749d805cd4b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 956ad2f73332544fd87365087825cc4f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.46
+  m_Volume: 0.13
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -986,11 +987,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "INSTRUCTIONS:\nObjective:  maintain your health by eating food found throughout
-    parts of the island  and collect all 4 boat pieces to re-build your boat\n\n-
-    press 'spacebar' to pick up a boat piece\n- press 'spacebar' to pick up food
-    \n- press 'm' to view the map and see where you are on the island\n- view the
-    status of your health by the hearts in the top right corner\n"
+  m_Text: "INSTRUCTIONS:\nMaintain your health by eating food found throughout parts
+    of the island  and collect all 4 boat pieces to re-build your boat\n\n- press
+    'space' to pick up a boat piece\n- press 'space' to pick up food \n- press 'm'
+    to view the map and see where you are on the island\n- view the status of your
+    health by the hearts in the top right corner\n"
 --- !u!222 &1598393113
 CanvasRenderer:
   m_ObjectHideFlags: 0
