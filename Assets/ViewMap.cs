@@ -16,6 +16,9 @@ public class ViewMap : MonoBehaviour
     Vector2 hillsDimensions = new Vector2(10, 10);
     Vector2 forestDimensions = new Vector2(10, 10);
 
+    float screenWidth;
+    float screenHeight;
+
     float transformIslandX = -50;
     float transformIslandY = 50;
     float scaleIslandX = 155f/180;
@@ -54,8 +57,10 @@ public class ViewMap : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("m")) {
-            UserViewsMap();
+            ToggleViewMap();
         }
+
+        UserViewsMap();
 
         if (viewMap) {
             navigationDot.SetActive(true);
@@ -121,13 +126,29 @@ public class ViewMap : MonoBehaviour
 
     private void UserViewsMap()
     {
-        if (!viewMap) {
-            mapIcon.transform.localPosition = new Vector3(220, 200, 0);
+        if (viewMap) {
+            float xPos = screenWidth - 450;
+            float yPos = screenHeight - 190;
+            mapIcon.transform.position = new Vector3(xPos, yPos, 0);
+            //mapIcon.transform.localPosition = new Vector3(220, 200, 0);
             mapIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(300, 300);
         } else {
-            mapIcon.transform.localPosition = new Vector3(330, 300, 0);
-            mapIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(75, 75);
+            float xPos = screenWidth - 350;
+            float yPos = screenHeight - 90;
+            mapIcon.transform.position = new Vector3(xPos, yPos, 0);
+            //mapIcon.transform.localPosition = new Vector3(330, 300, 0);
+            mapIcon.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
         }
+    }
+
+    private void ToggleViewMap() 
+    {
         viewMap = !viewMap;
+    }
+
+    private void OnGUI()
+    {
+        screenWidth = Screen.width;
+        screenHeight = Screen.height;
     }
 }
