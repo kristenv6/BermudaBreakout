@@ -7,6 +7,6 @@ public class PlayAgain : MonoBehaviour
 {
     public void PlayGameAgain()
     {
-        SceneManager.LoadScene("island");
+        SceneManager.LoadScene("IslandScene");
     }
 }
