@@ -55,6 +55,8 @@ public class WoodIconsController : MonoBehaviour
 
     private void EndOfGameCleanup()
     {
+        GameStats.FinalTime = GameStats.GameTimer;
+
         GameStats.WoodCount = 0;
         GameStats.IslandWoodPickedUp = false;
         GameStats.CaveWoodPickedUp = false;

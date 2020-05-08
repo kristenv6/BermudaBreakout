@@ -58,8 +58,10 @@ public class HighScoreTable : MonoBehaviour
         string rankString = rank.ToString();
         entryTransform.Find("PosTextEntry").GetComponent<Text>().text = rankString;
 
-        int score = highScoreEntry.score;
-        entryTransform.Find("TimeTextEntry").GetComponent<Text>().text = score.ToString();
+        float score = highScoreEntry.score;
+        System.TimeSpan t = System.TimeSpan.FromSeconds(score);
+        string timerFormatted = string.Format("{0:D2}:{1:D2}:{2:D2}", t.Hours, t.Minutes, t.Seconds);
+        entryTransform.Find("TimeTextEntry").GetComponent<Text>().text = timerFormatted;
 
         string name = highScoreEntry.name;
         entryTransform.Find("NameTextEntry").GetComponent<Text>().text = name;
@@ -89,7 +91,7 @@ public class HighScoreTable : MonoBehaviour
             Debug.Log(PlayerPrefs.GetString("highScoreTable"));
     }
 
-    public void AddHighScoreEntry(int score, string name) {
+    public void AddHighScoreEntry(float score, string name) {
         HighScoreEntry highScoreEntry = new HighScoreEntry{ score = score, name = name };
 
         HighScores highScores;
@@ -138,7 +140,7 @@ public class HighScoreTable : MonoBehaviour
     // a single high score entry
     [System.Serializable]
     private class HighScoreEntry {
-        public int score;
+        public float score;
         public string name;
     }
 }

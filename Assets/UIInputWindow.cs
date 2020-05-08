@@ -30,7 +30,9 @@ public class UIInputWindow : MonoBehaviour
         userInputtedName = inputText.GetComponent<Text>().text;
         Debug.Log(userInputtedName);
         
-        highScoreTableScript.AddHighScoreEntry(11111, userInputtedName);
+        highScoreTableScript.AddHighScoreEntry(GameStats.FinalTime, userInputtedName);
+        // reset the final time in case the user plays again
+        GameStats.FinalTime = 0;
 
         Hide();
     }

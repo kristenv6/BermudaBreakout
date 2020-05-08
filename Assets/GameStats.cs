@@ -8,6 +8,9 @@ public static class GameStats
 {
     // game timer
     public static float gameTimer = 0;
+
+    // final game timer
+    public static float finalTime = 0;
     
     // health levels
     public static float healthTimer = 0;
@@ -19,7 +22,7 @@ public static class GameStats
     public static int nextLifeMin = 0;
     
     // wood pickup vars 
-    private static int woodCount = 3;
+    private static int woodCount = 0;
 
     private static bool islandWoodPickedUp = false;
     private static bool caveWoodPickedUp = false;
@@ -44,6 +47,19 @@ public static class GameStats
         set
         {
             gameTimer = value;
+        }
+    }
+
+      // timer function
+    public static float FinalTime
+    {
+        get
+        {
+            return finalTime;
+        }
+        set
+        {
+            finalTime = value;
         }
     }
     
