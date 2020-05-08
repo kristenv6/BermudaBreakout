@@ -61,7 +61,7 @@ public class PickupCaveWood : MonoBehaviour
         {
             pos = new Vector3(-57.41f, -4.54f, -70.71f);
         }
-        else if (randValue <= 2)
+        else if (randValue <= 3)
         {
             pos = new Vector3(-75.2f, -4.68f, -53.94f);
         }

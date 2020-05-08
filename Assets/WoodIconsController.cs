@@ -63,6 +63,11 @@ public class WoodIconsController : MonoBehaviour
         GameStats.HillsWoodPickedUp = false;
         GameStats.ForestWoodPickedUp = false;
 
+        GameStats.islandWoodPosition = new Vector3(0, 0, 0);
+        GameStats.caveWoodPosition = new Vector3(0, 0, 0);
+        GameStats.forestWoodPosition = new Vector3(0, 0, 0);
+        GameStats.hillsWoodPosition = new Vector3(0, 0, 0);
+
         GameStats.GameTimer = 0;
         GameStats.HealthTimer = 0;
         GameStats.heartNum = 0;
