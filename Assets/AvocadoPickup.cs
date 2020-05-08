@@ -80,9 +80,6 @@ public class AvocadoPickup : MonoBehaviour
           }
           heart.SetActive(true);
           setRestToActive(trs);
-          GameStats.healthTimer = 0;
-          GameStats.lifeGapTime = GameStats.orig_lifeGapTime;
-          GameStats.nextLife = GameStats.orig_nextLife;
         }
         
     }
