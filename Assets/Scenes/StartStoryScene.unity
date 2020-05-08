@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -417,7 +417,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "YOU CAN PORTAL TO OTHER PARTS OF THE ISLAND \n\t- BEACH\n\t- FORREST\n\t-
+  m_Text: "YOU CAN PORTAL TO OTHER PARTS OF THE ISLAND \n\t- BEACH\n\t- FOREST\n\t-
     CAVE\n\t- JUNGLE\nBY APPROACHING A PURPLE PORTAL "
 --- !u!222 &866628526
 CanvasRenderer:
