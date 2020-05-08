@@ -9,6 +9,10 @@ public class MainMenuButtons : MonoBehaviour
         SceneManager.LoadScene("StartStoryScene");
     }
 
+    public void MainMenu() {
+        SceneManager.LoadScene("MainMenuScene");
+    }
+
     public void QuitGame() {
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;

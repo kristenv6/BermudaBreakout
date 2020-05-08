@@ -48,12 +48,12 @@ public class FinalScene : MonoBehaviour
         gameOverText = GameObject.Find("Game Over");
         gameOverText.SetActive(false);
 
-        playAgainButton = GameObject.Find("Play Again");
-        playAgainButton.SetActive(false);
-        mainMenuButton = GameObject.Find("MainMenu");
-        mainMenuButton.SetActive(false);
-        quitButton = GameObject.Find("Quit");
-        quitButton.SetActive(false);
+        // playAgainButton = GameObject.Find("Play Again");
+        // playAgainButton.SetActive(false);
+        // mainMenuButton = GameObject.Find("MainMenu");
+        // mainMenuButton.SetActive(false);
+        // quitButton = GameObject.Find("Quit");
+        // quitButton.SetActive(false);
 
         panel = GameObject.Find("Panel");
         panel.SetActive(false);
@@ -95,10 +95,12 @@ public class FinalScene : MonoBehaviour
         yield return new WaitForSeconds(2);
         panel.SetActive(true);
         gameOverText.SetActive(true);
-        playAgainButton.SetActive(true);
-        mainMenuButton.SetActive(true);
-        quitButton.SetActive(true);
-        // SceneManager.LoadScene("GameOver");
+        // playAgainButton.SetActive(true);
+        // mainMenuButton.SetActive(true);
+        // quitButton.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("HSTScene");
      }
 
     private IEnumerator FadeTextToZeroAlpha(float t, Text i)
