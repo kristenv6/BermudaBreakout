@@ -15,11 +15,7 @@ public static class GameStats
     // health levels
     public static float healthTimer = 0;
     public static int heartNum = 0;
-    public static int orig_lifeGapTime = 59;
-    public static int orig_nextLife = 59;
     public static int lifeGapTime = 30;
-    public static int nextLife = 59;
-    public static int nextLifeMin = 0;
     
     // wood pickup vars 
     private static int woodCount = 0;
@@ -100,41 +96,6 @@ public static class GameStats
         }
     }
     
-    public static int LifeGapTimeOrig
-    {
-        get
-        {
-            return orig_lifeGapTime;
-        }
-        set
-        {
-            orig_lifeGapTime = value;
-        }
-    }
-    
-    public static int NextLife
-    {
-        get
-        {
-            return nextLife;
-        }
-        set
-        {
-            nextLife = value;
-        }
-    }
-    
-    public static int NextLifeOrig
-    {
-        get
-        {
-            return orig_nextLife;
-        }
-        set
-        {
-            orig_nextLife = value;
-        }
-    }
     
     // wood pick upfunctions
     public static int WoodCount

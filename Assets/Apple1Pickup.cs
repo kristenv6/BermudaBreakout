@@ -80,9 +80,6 @@ public class Apple1Pickup : MonoBehaviour
             Debug.Log("heart num is " + GameStats.heartNum);
           }
           heart.SetActive(true);
-          GameStats.healthTimer = 0;
-          GameStats.lifeGapTime = GameStats.orig_lifeGapTime;
-          GameStats.nextLife = GameStats.orig_nextLife;
         }
         
     }
