@@ -21,12 +21,16 @@ public class HighScoreTable : MonoBehaviour
 
         HighScores highScores;
         string jsonString = PlayerPrefs.GetString("highScoreTable");
-        if (jsonString != null) {
+        Debug.Log("jsonString:" + jsonString);
+        if (jsonString != "") {
             highScores = JsonUtility.FromJson<HighScores>(jsonString);
         } else {
             // in case player prefs gets screwed up
             highScores = null;
+
             AddDummyHighScores();
+            jsonString = PlayerPrefs.GetString("highScoreTable");
+            highScores = JsonUtility.FromJson<HighScores>(jsonString);
         }
 
         // sort the scores
@@ -96,12 +100,15 @@ public class HighScoreTable : MonoBehaviour
 
         HighScores highScores;
         string jsonString = PlayerPrefs.GetString("highScoreTable");
-        if (jsonString != null) {
+        Debug.Log("jsonString:" + jsonString);
+        if (jsonString != "") {
             highScores = JsonUtility.FromJson<HighScores>(jsonString);
         } else {
             // in case player prefs gets screwed up
             highScores = null;
             AddDummyHighScores();
+            jsonString = PlayerPrefs.GetString("highScoreTable");
+            highScores = JsonUtility.FromJson<HighScores>(jsonString);
         }
 
         highScores.highScoreEntryList.Add(highScoreEntry);
