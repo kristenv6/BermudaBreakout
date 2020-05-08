@@ -30,7 +30,7 @@ public class AvocadoPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (inRange && Input.GetKeyDown("space"))
+      if (inRange && Input.GetKeyDown("space") && foodItem.activeSelf)
       {
           UserPicksUp();
       }
@@ -64,7 +64,7 @@ public class AvocadoPickup : MonoBehaviour
         // do the health stuff 
         int heartToShow = GameStats.heartNum;
         GameObject heart = null;
-        Debug.Log("looking for " + "Heart" + GameStats.heartNum.ToString());
+        Debug.Log("avocado: looking for " + "Heart" + GameStats.heartNum.ToString());
         Transform[] trs= healthSystem.GetComponentsInChildren<Transform>(true);
         foreach(Transform t in trs){
            int temp = GameStats.heartNum - 1;
@@ -79,6 +79,7 @@ public class AvocadoPickup : MonoBehaviour
             Debug.Log("heart num is " + GameStats.heartNum);
           }
           heart.SetActive(true);
+          Debug.Log("HEART ACTIVATED WITH AVOCADO ONE");
           setRestToActive(trs);
         }
         
@@ -89,6 +90,7 @@ public class AvocadoPickup : MonoBehaviour
         foreach(Transform t in trs) {
            if(t.name == "Heart" + GameStats.heartNum.ToString()){
                 GameObject heart =  t.gameObject;
+                Debug.Log("HEART ACTIVATED WITH AVOCADO SET ALL");
                 heart.SetActive(true);
            }
         }
