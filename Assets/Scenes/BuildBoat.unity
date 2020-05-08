@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -253,8 +253,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'CONGRATS!
 
-    You have found all of the boat pieces and can now rebuild
-    your boat.'
+    You have found all of the boat pieces and can now rebuild your boat.'
 --- !u!222 &219316470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -781,6 +780,7 @@ GameObject:
   - component: {fileID: 1350434566}
   - component: {fileID: 1350434565}
   - component: {fileID: 1350434564}
+  - component: {fileID: 1350434568}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -870,6 +870,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1350434568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350434563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66220a8a0a1da45e7a5bbb9ed9382dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1442801335
 PrefabInstance:
   m_ObjectHideFlags: 0

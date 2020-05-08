@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WoodIconsController : MonoBehaviour
 {
@@ -47,7 +48,23 @@ public class WoodIconsController : MonoBehaviour
         if (GameStats.WoodCount >= 4)
         {
             woodIcon4.SetActive(true);
+            EndOfGameCleanup();
+            SceneManager.LoadScene("BuildBoat");
         }
+    }
+
+    private void EndOfGameCleanup()
+    {
+        GameStats.WoodCount = 0;
+        GameStats.IslandWoodPickedUp = false;
+        GameStats.CaveWoodPickedUp = false;
+        GameStats.HillsWoodPickedUp = false;
+        GameStats.ForestWoodPickedUp = false;
+
+        GameStats.GameTimer = 0;
+        GameStats.HealthTimer = 0;
+        GameStats.heartNum = 0;
+        Destroy(GameObject.Find("MapCanvas"));
     }
 
     private void OnGUI()
