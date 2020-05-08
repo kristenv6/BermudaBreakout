@@ -47,11 +47,9 @@ public class Apple2Pickup : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-      if(foodItem.activeSelf) {
         inRange = false;
         pickupInstructionsText.enabled = false;
         instructionsBackground.enabled = false;
-      }
     }
 
     private void UserPicksUp()
@@ -65,7 +63,7 @@ public class Apple2Pickup : MonoBehaviour
         // do the health stuff 
         int heartToShow = GameStats.heartNum;
         GameObject heart = null;
-        Debug.Log("looking for " + "Heart" + GameStats.heartNum.ToString());
+        Debug.Log("apple2: looking for " + "Heart" + GameStats.heartNum.ToString());
         Transform[] trs= healthSystem.GetComponentsInChildren<Transform>(true);
         foreach(Transform t in trs){
            int temp = GameStats.heartNum - 1;
@@ -79,6 +77,7 @@ public class Apple2Pickup : MonoBehaviour
             GameStats.heartNum--;
             Debug.Log("heart num is " + GameStats.heartNum);
           }
+          Debug.Log("HEART ACTIVATED WITH APPLE 2");
           heart.SetActive(true);
         }
         
