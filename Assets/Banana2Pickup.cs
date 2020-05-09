@@ -46,11 +46,9 @@ public class Banana2Pickup : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-      if(foodItem.activeSelf) {
         inRange = false;
         pickupInstructionsText.enabled = false;
         instructionsBackground.enabled = false;
-      }
     }
 
     private void UserPicksUp()
